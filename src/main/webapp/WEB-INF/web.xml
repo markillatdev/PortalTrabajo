@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>PortalTrabajo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <resource-ref>
+ <res-ref-name>jdbc/db_portal_job</res-ref-name>
+ <res-type>javax.sql.DataSource</res-type>
+ <res-auth>Container</res-auth>
+ <res-sharing-scope>Shareable</res-sharing-scope>
+</resource-ref>
+
+<servlet>
+    <servlet-name>FrontControllerServlet</servlet-name>
+    <servlet-class>com.app.portaldeempleo.servlets.FrontControllerServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>FrontControllerServlet</servlet-name>
+	  <url-pattern>/puestos-trabajo</url-pattern>
+	  <url-pattern>/detalle-trabajo</url-pattern>
+	  <url-pattern>/completar-registro</url-pattern>
+</servlet-mapping>
+    
+<error-page>
+   <error-code>404</error-code>
+   <location>/error.jsp</location>
+</error-page>
+   
+</web-app>
